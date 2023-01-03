@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Entries">
+    <ContentPage.Content>
+        <StackLayout>
+            <Entry Text="Testing"></Entry>
+            <Entry Text="Testing" IsReadOnly="True"></Entry>
+
+            <Entry Placeholder="Name"></Entry>
+            <Entry Placeholder="Testing" PlaceholderColor="Red"></Entry>
+
+            <Entry Placeholder="Name" MaxLength="15"></Entry>
+            
+            <Entry Placeholder="Password" IsPassword="True"></Entry>
+            <Entry Text="Testing" ReturnType="Search"></Entry>
+
+            <Entry x:Name="txtName"></Entry>
+
+            <Entry Completed="Entry_Completed"></Entry>
+
+            <Entry TextChanged="Entry_TextChanged"></Entry>
+
+            <Label x:Name="lblValue" FontSize="Medium" TextColor="Red"></Label>        
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

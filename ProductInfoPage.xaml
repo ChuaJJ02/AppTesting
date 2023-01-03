@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:App2"
+             x:Class="App2.ProductInfoPage">
+    <ContentPage.BindingContext>
+        <local:ProductInfoViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+
+    <ContentPage.Content>
+        <StackLayout>
+            <SearchBar x:Name="Search1" Placeholder="Search"
+                       CancelButtonColor="Blue" 
+                       PlaceholderColor="SkyBlue" 
+                       HorizontalTextAlignment="Center" 
+                       TextChanged="Search1_TextChanged"></SearchBar>
+            <ListView x:Name="Items"
+                      ItemsSource="{Binding ItemList}"
+                      HasUnevenRows="True"
+                      SeparatorVisibility="None"
+                      SeparatorColor="Blue"
+                      IsPullToRefreshEnabled="True"
+                      RefreshControlColor="Red">
+                <!--used to refresh the page-->
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<ImageCell 
+                            Text="{Binding ProductName}"
+                            TextColor="Black"
+                            Detail="{Binding Price}"
+                            ImageSource="{Binding ImageURL}"></ImageCell>-->
+                        <ViewCell>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Favourite"></MenuItem>
+                                <MenuItem Text="Delete"></MenuItem>
+                            </ViewCell.ContextActions>
+                            <Grid Padding="10">
+                                <Frame CornerRadius="10" HasShadow="True">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Image Source="{Binding ImageURL}" WidthRequest="100" HeightRequest="100"></Image>
+                                        <StackLayout VerticalOptions="Center">
+                                            <Label Text="{Binding ProductName}" FontSize="Large"></Label>
+                                            <Label Text="{Binding Price}" FontSize="Medium"></Label>
+                                        </StackLayout>
+                                        <StackLayout VerticalOptions="Center" HorizontalOptions="EndAndExpand">
+                                            <Image Source="images1.png"
+                                                   WidthRequest="30"
+                                                   HeightRequest="30">
+                                                <Image.GestureRecognizers>
+                                                    <TapGestureRecognizer 
+                                                        Tapped="TapGestureRecognizer_Tapped"
+                                                        CommandParameter="{Binding ProductId}"
+                                                        />
+                                                </Image.GestureRecognizers>
+                                            </Image>
+                                            <Image Source="images2.png"
+                                                   WidthRequest="30"
+                                                   HeightRequest="30"></Image>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.Header>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Label Text="Product Info" FontSize="Large" TextColor="Gray"></Label>
+                    </StackLayout>
+                </ListView.Header>
+
+                <ListView.Footer>
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Button Text="Load More" FontSize="Large" TextColor="Gray"></Button>
+                    </StackLayout>
+                </ListView.Footer>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

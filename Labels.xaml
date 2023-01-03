@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Labels">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Label:1 Hello Xamarin.Forms!" />
+            <Label Text="Label:2 Keep Going" FontSize="Large"></Label>
+            <Label Text="Label:3 Keep Going" FontSize="Large" TextColor="DarkBlue"></Label>
+            <Label Text="Label:4 Keep Going" FontSize="Large" TextColor="DarkBlue" LineHeight="15"></Label>
+
+            <Label Text="Label:5 Hello Xamarin.Forms!" HorizontalOptions="Center"/>
+            <Label Text="Label:6 Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!" 
+                 HorizontalOptions="Center"
+                 LineBreakMode="WordWrap"/>
+
+            <Label Text="Label:7 Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!Hello Xamarin.Forms!" 
+                 HorizontalOptions="Center"
+                 LineBreakMode="NoWrap"/>
+
+            <Label Text="Label:1 Hello Xamarin.Forms!"
+                   TextColor="Blue"
+                   FontAttributes="Italic"
+                   FontSize="24"
+                   TextDecorations="Underline"
+                   HorizontalOptions="Center"/>
+
+            <Label LineBreakMode="WordWrap">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Label 9 Red Bold" TextColor="Red" FontAttributes="Bold"></Span>
+                        <Span Text="Label 10 Default" Style="{DynamicResource BoldStyle}"></Span>
+                        <Span Text="Label 11" FontAttributes="Italic" FontSize="Small"></Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+            <Label TextColor="Gray" FontSize="Medium" LineBreakMode="WordWrap">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Label 11 YouTube Channel"></Span>
+                        <Span FontAttributes="Italic"></Span>
+                        <Span Text="ClickHere"
+                              TextDecorations="Underline"
+                              TextColor="Blue">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding TapCommand}"
+                                                      CommandParameter="https://www.youtube.com/"></TapGestureRecognizer>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App2.Recycle_Layout">
+    <ContentPage.Content>
+        <Grid BackgroundColor="DeepSkyBlue"
+              RowSpacing="2"
+              ColumnSpacing="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"></RowDefinition>
+                <RowDefinition Height="75"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="150"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="75"></ColumnDefinition>
+                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" 
+                   Grid.Column="0" 
+                   Text="Label 1" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>
+            <Label Grid.Row="1" 
+                   Grid.Column="0" 
+                   Text="Label 2" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>
+            <Label Grid.Row="2" 
+                   Grid.Column="0" 
+                   Text="Label 3" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>
+            <Label Grid.Row="3" 
+                   Grid.Column="0" 
+                   Text="Label 4" 
+                   TextColor="White"
+                   BackgroundColor="Black"
+                   Grid.ColumnSpan="3">
+            </Label>
+            <Label Grid.Row="0" 
+                   Grid.Column="1" 
+                   Text="Label 5" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>
+            <Label Grid.Row="1" 
+                   Grid.Column="1" 
+                   Text="Label 6" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>
+            <Label Grid.Row="2" 
+                   Grid.Column="1" 
+                   Text="Label 7" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>
+            <!--<Label Grid.Row="3" 
+                   Grid.Column="1" 
+                   Text="Label 8" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>-->
+            <Label Grid.Row="0" 
+                   Grid.Column="2" 
+                   Text="Label 9" 
+                   TextColor="White"
+                   BackgroundColor="Black"
+                   Grid.RowSpan="3">
+            </Label>
+            <!--<Label Grid.Row="1" 
+                   Grid.Column="2" 
+                   Text="Label 10" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>-->
+            <!--<Label Grid.Row="2" 
+                   Grid.Column="2" 
+                   Text="Label 11" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>-->
+            <!--Label Grid.Row="3" 
+                   Grid.Column="2" 
+                   Text="Label 12" 
+                   TextColor="White"
+                   BackgroundColor="Black">
+            </Label>-->
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
